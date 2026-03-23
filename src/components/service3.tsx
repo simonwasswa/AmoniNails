@@ -27,7 +27,7 @@ export default function Services3() {
           <div
             class={`overflow-hidden transition-all duration-500 ease-in-out ${
               expanded()
-                ? "max-h-[400px] opacity-100 translate-y-0"
+                ? "max-h-400px opacity-100 translate-y-0"
                 : "max-h-0 opacity-0 -translate-y-3"
             }`}
           >
@@ -66,7 +66,7 @@ export default function Services3() {
         </div>
 
         {/* Right Image */}
-        <div class="w-[300px] lg:w-4/5 xl:w-full mx-auto h-[500px] overflow-hidden rounded-md shadow-lg">
+        <div class="w-300px lg:w-4/5 xl:w-full mx-auto h-500px overflow-hidden rounded-md shadow-lg">
           <img
             src={nail2}
             alt="Waxing Service"

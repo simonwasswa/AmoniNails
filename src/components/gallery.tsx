@@ -38,7 +38,7 @@ export default function SalonGallery() {
   onCleanup(() => window.removeEventListener("keydown", handleKey));
 
   return (
-    <section class="bg-gradient-to-b from-gray-50 to-gray-100 py-12 md:py-20 px-4 sm:px-6 lg:px-8">
+    <section class="bg-linear-to-b from-gray-50 to-gray-100 py-12 md:py-20 px-4 sm:px-6 lg:px-8">
       <div class="max-w-7xl mx-auto">
         <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 text-gray-800 tracking-tight">
           Our Salon Moments
@@ -50,7 +50,7 @@ export default function SalonGallery() {
               class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer bg-white"
               onClick={() => setSelectedIndex(idx)}
             >
-              <div class="aspect-[4/5] md:aspect-[3/4] overflow-hidden">
+              <div class="aspect-4/5 md:aspect-3/4 overflow-hidden">
                 <img
                   src={img.src}
                   alt={img.title}
@@ -58,7 +58,7 @@ export default function SalonGallery() {
                   loading="lazy"
                 />
               </div>
-              <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400 flex items-end p-5">
+              <div class="absolute inset-0 bg-linear-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400 flex items-end p-5">
                 <h3 class="text-white text-xl font-semibold drop-shadow-md">{img.title}</h3>
               </div>
             </div>

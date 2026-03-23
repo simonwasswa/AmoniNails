@@ -84,7 +84,7 @@ export default function HeroSection() {
             <img
               src={strings.image}
               alt={strings.imageAlt}
-              class="w-full h-[600px] md:h-[680px] object-cover transition-transform duration-700 hover:scale-110"
+              class="w-full h-600px md:h-680px object-cover transition-transform duration-700 hover:scale-110"
               loading="eager"
             />
           </div>
@@ -93,9 +93,9 @@ export default function HeroSection() {
       </div>
 
       {/* Floating decoration */}
-      <div class="absolute bottom-10 right-10 w-16 h-16 md:w-24 md:h-24 bg-gradient-to-br from-pink-400 to-red-500 rounded-full opacity-40 blur-2xl animate-pulse pointer-events-none"></div>
+      <div class="absolute bottom-10 right-10 w-16 h-16 md:w-24 md:h-24 bg-linear-to-br from-pink-400 to-red-500 rounded-full opacity-40 blur-2xl animate-pulse pointer-events-none"></div>
 
-      <div class="absolute top-40 left-20 w-20 h-20 md:w-32 md:h-32 bg-gradient-to-br from-purple-400 to-pink-500 rounded-full opacity-30 blur-3xl animate-pulse pointer-events-none"></div>
+      <div class="absolute top-40 left-20 w-20 h-20 md:w-32 md:h-32 bg-linear-to-br from-purple-400 to-pink-500 rounded-full opacity-30 blur-3xl animate-pulse pointer-events-none"></div>
 
     </section>
   );

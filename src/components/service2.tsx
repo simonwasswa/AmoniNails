@@ -14,7 +14,7 @@ export default function Service2() {
           <img
             src={nail2}
             alt="Manicure Service"
-            class="w-full h-[300px] sm:h-[400px] md:h-[450px] lg:h-[500px] object-cover transition-transform duration-700 hover:scale-110"
+            class="w-full h-300px sm:h-400px md:h-450px lg:h-500px object-cover transition-transform duration-700 hover:scale-110"
           />
         </div>
 
@@ -34,7 +34,7 @@ export default function Service2() {
           <div
             class={`overflow-hidden transition-all duration-500 ease-in-out ${
               expanded()
-                ? "max-h-[400px] opacity-100 translate-y-0"
+                ? "max-h-400px opacity-100 translate-y-0"
                 : "max-h-0 opacity-0 -translate-y-3"
             }`}
           >

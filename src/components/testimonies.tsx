@@ -45,7 +45,7 @@ export default function Testimonials() {
               style={{ transform: `translateX(-${current() * 100}%)` }}
             >
               {testimonials.map((t) => (
-                <div class="w-full flex-shrink-0 px-4">
+                <div class="w-full shrink-0 px-4">
                   <div class="bg-white rounded-2xl shadow-lg p-8 md:p-10">
                     <div class="flex flex-col items-center">
                       <img

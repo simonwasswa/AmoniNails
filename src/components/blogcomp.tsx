@@ -36,7 +36,7 @@ export default function BlogS() {
               <img
                 src={blog.image}
                 alt={blog.title}
-                class="w-full h-[250px] md:h-[300px] object-cover rounded-lg"
+                class="w-full h-62.5 md:h-75 object-cover rounded-lg"
               />
             </div>
 

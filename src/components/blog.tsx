@@ -66,7 +66,7 @@ export default function BlogSection() {
               </p>
 
               {/* bottom line */}
-              <div class="w-24 h-[3px] bg-pink-500 mt-4"></div>
+              <div class="w-24 h-0.75 bg-pink-500 mt-4"></div>
 
             </div>
 

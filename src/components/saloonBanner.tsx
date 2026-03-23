@@ -14,7 +14,7 @@ export default function SalonImageSection() {
           <img
             src={nail2}
             alt="Manicure Service"
-            class="w-full h-[300px] sm:h-[400px] md:h-[450px] lg:h-[500px] object-cover object-right transition-transform duration-700 hover:scale-110"
+            class="w-full h-300px sm:h-400px md:h-450px lg:h-500px object-cover object-right transition-transform duration-700 hover:scale-110"
           />
         </div>
 
