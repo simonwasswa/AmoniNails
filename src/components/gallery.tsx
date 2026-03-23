@@ -1,5 +1,5 @@
 import { createSignal, onMount, onCleanup } from "solid-js";
-import nail2 from "../assets/nail2.jpg"; // ← replace with your real images
+import nail2 from "../assets/nail2.jpg";
 
 export default function SalonGallery() {
   const images = [
@@ -16,21 +16,21 @@ export default function SalonGallery() {
 
   const [selectedIndex, setSelectedIndex] = createSignal<number | null>(null);
 
-  const selected = () => {
-    const idx = selectedIndex();
-    return idx !== null ? images[idx] : null;
-  };
+  const selected = () => (selectedIndex() !== null ? images[selectedIndex()!] : null);
 
-  // Keyboard navigation
   const handleKey = (e: KeyboardEvent) => {
     if (selectedIndex() === null) return;
 
-    if (e.key === "Escape") {
-      setSelectedIndex(null);
-    } else if (e.key === "ArrowLeft") {
-      setSelectedIndex((prev) => (prev === 0 ? images.length - 1 : (prev ?? 0) - 1));
-    } else if (e.key === "ArrowRight") {
-      setSelectedIndex((prev) => (prev === images.length - 1 ? 0 : (prev ?? 0) + 1));
+    switch (e.key) {
+      case "Escape":
+        setSelectedIndex(null);
+        break;
+      case "ArrowLeft":
+        setSelectedIndex((prev) => (prev === 0 ? images.length - 1 : (prev ?? 0) - 1));
+        break;
+      case "ArrowRight":
+        setSelectedIndex((prev) => (prev === images.length - 1 ? 0 : (prev ?? 0) + 1));
+        break;
     }
   };
 
@@ -44,7 +44,6 @@ export default function SalonGallery() {
           Our Salon Moments
         </h2>
 
-        {/* Gallery Grid – responsive + nice aspect + hover */}
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 md:gap-6">
           {images.map((img, idx) => (
             <div
@@ -59,27 +58,20 @@ export default function SalonGallery() {
                   loading="lazy"
                 />
               </div>
-
-              {/* Nice overlay with title at bottom */}
               <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400 flex items-end p-5">
-                <h3 class="text-white text-xl font-semibold drop-shadow-md">
-                  {img.title}
-                </h3>
+                <h3 class="text-white text-xl font-semibold drop-shadow-md">{img.title}</h3>
               </div>
             </div>
           ))}
         </div>
       </div>
 
-      {/* ─── Fullscreen Lightbox ─── centered perfectly ─── */}
       {selected() && (
         <div
           class="fixed inset-0 bg-black/95 backdrop-blur-sm z-50 flex items-center justify-center p-4"
-          onClick={(e) => {
-            if (e.target === e.currentTarget) setSelectedIndex(null);
-          }}
+          onClick={(e) => e.target === e.currentTarget && setSelectedIndex(null)}
         >
-          {/* Close button – top right */}
+          {/* Close button */}
           <button
             class="absolute top-5 right-5 md:top-8 md:right-8 text-white text-5xl hover:text-gray-300 transition-colors focus:outline-none z-10"
             onClick={() => setSelectedIndex(null)}
@@ -88,7 +80,7 @@ export default function SalonGallery() {
             ×
           </button>
 
-          {/* Left / Right arrows */}
+          {/* Arrows */}
           <button
             class="hidden sm:block absolute left-4 md:left-10 top-1/2 -translate-y-1/2 text-white text-6xl hover:text-gray-300 transition-colors px-5 py-10 focus:outline-none z-10"
             onClick={(e) => {
@@ -116,11 +108,8 @@ export default function SalonGallery() {
               alt={selected()!.title}
               class="max-w-full max-h-[90vh] md:max-h-[65vh] object-contain rounded-xl shadow-2xl transition-all duration-300"
             />
-
             <div class="mt-5 text-center text-white">
-              <p class="text-2xl md:text-3xl font-medium drop-shadow-lg">
-                {selected()!.title}
-              </p>
+              <p class="text-2xl md:text-3xl font-medium drop-shadow-lg">{selected()!.title}</p>
               <p class="text-gray-400 mt-2 text-base md:text-lg">
                 {selectedIndex()! + 1} of {images.length}
               </p>

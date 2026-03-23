@@ -1,22 +1,13 @@
-import { createSignal } from "solid-js";
 import SalonOverview from "../components/overView";
 import SalonBanner from "../components/saloonBanner";
 import SalonGallery from "../components/gallery";
-import BlogS from "../components/blogcomp";
 
-
-
-
-export default function gallery() {
-  const [animate, setAnimate] = createSignal(false);
-
+export default function GalleryPage() {
   return (
-    
     <div>
-           <SalonOverview />
-           <SalonBanner/>
-           <SalonGallery/>   
-    </div>   
-      
+      <SalonOverview />
+      <SalonBanner />
+      <SalonGallery />
+    </div>
   );
 }
