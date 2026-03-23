@@ -1,0 +1,16 @@
+# netlify.toml - for SolidJS + pnpm deployment
+
+[build]
+  command = "pnpm run build"
+  publish = "dist"
+
+[context.production.environment]
+  NODE_VERSION = "20"
+
+[context.deploy-preview]
+  command = "pnpm run build"
+  publish = "dist"
+
+[context.branch-deploy]
+  command = "pnpm run build"
+  publish = "dist"
