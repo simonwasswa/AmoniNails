@@ -14,15 +14,23 @@ const strings = {
 export default function HeroSection() {
   const [animate, setAnimate] = createSignal(false);
 
+  // ✅ WHATSAPP FUNCTION (same as Navbar)
+  const handleWhatsApp = () => {
+    const waNumber = "256702478359";
+    const prefilledMsg = "Hello! I'd like to book a nail appointment 💅";
+    const url = `https://wa.me/${waNumber}?text=${encodeURIComponent(prefilledMsg)}`;
+    window.location.href = url;
+  };
+
   // ✅ Trigger animation ONCE when page loads
   onMount(() => {
-    setTimeout(() => setAnimate(true), 200); // small delay for smooth entry
+    setTimeout(() => setAnimate(true), 200);
   });
 
   return (
     <section class="relative min-h-screen overflow-hidden pt-24 md:pt-32 px-4 md:px-20 lg:px-32 pb-20">
 
-      {/* Fixed Background Image */}
+      {/* Background */}
       <div
         class="absolute inset-0 -z-20 bg-cover bg-center bg-fixed"
         style={{
@@ -30,17 +38,16 @@ export default function HeroSection() {
         }}
       ></div>
 
-      {/* Overlay */}
       <div class="absolute inset-0 -z-10 bg-white/80 backdrop-blur-sm"></div>
 
-      {/* Large Background Word */}
+      {/* Big Text */}
       <h1 class="absolute -left-4 md:left-6 top-20 md:top-24 text-[140px] md:text-[220px] lg:text-[280px] font-bold text-gray-200 opacity-30 select-none pointer-events-none leading-none">
         Beauty
       </h1>
 
       <div class="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16 max-w-7xl mx-auto">
 
-        {/* TEXT SECTION */}
+        {/* TEXT */}
         <div class="max-w-xl lg:max-w-2xl space-y-6 md:space-y-8 text-center lg:text-left">
 
           <h1
@@ -61,8 +68,10 @@ export default function HeroSection() {
             {strings.description}
           </p>
 
+          {/* ✅ BOOK NOW BUTTON (CONNECTED TO WHATSAPP) */}
           <div class="pt-4">
             <button
+              onClick={handleWhatsApp}
               class={`bg-pink-500 text-white px-10 py-4 rounded-full text-lg font-semibold
               transition-all duration-300
               hover:bg-pink-600
@@ -76,7 +85,7 @@ export default function HeroSection() {
 
         </div>
 
-        {/* IMAGE SECTION */}
+        {/* IMAGE */}
         <div
           class={`w-full lg:w-3/5 xl:w-1/2 ${
             animate() ? "animate-slide-right delay-2" : "opacity-0"
@@ -94,7 +103,7 @@ export default function HeroSection() {
 
       </div>
 
-      {/* Floating decoration */}
+      {/* Decorations */}
       <div class="absolute bottom-10 right-10 w-16 h-16 md:w-24 md:h-24 bg-linear-to-br from-pink-400 to-red-500 rounded-full opacity-40 blur-2xl animate-pulse pointer-events-none"></div>
 
       <div class="absolute top-40 left-20 w-20 h-20 md:w-32 md:h-32 bg-linear-to-br from-purple-400 to-pink-500 rounded-full opacity-30 blur-3xl animate-pulse pointer-events-none"></div>
