@@ -66,11 +66,11 @@ export default function Navbar() {
       <Show when={menuOpen()}>
         <div class="fixed inset-0 z-250 bg-black/70 backdrop-blur-sm flex items-center justify-center md:hidden">
           <div class="bg-white w-[85%] max-w-sm rounded-2xl shadow-2xl flex flex-col items-center gap-8 py-12 text-lg uppercase tracking-widest">
-            <A href="/" onClick={closeMenu}>Home</A>
-            <A href="/about" onClick={closeMenu}>About</A>
-            <A href="/services" onClick={closeMenu}>Services</A>
-            <A href="/blog" onClick={closeMenu}>Blog</A>
-            <A href="/gallery" onClick={closeMenu}>Gallery</A>
+              <A href="/" onClick={closeMenu} class="text-black hover:text-pink-600 transition">Home</A>
+              <A href="/about" onClick={closeMenu} class="text-black hover:text-pink-600 transition">About</A>
+              <A href="/services" onClick={closeMenu} class="text-black hover:text-pink-600 transition">Services</A>
+              <A href="/blog" onClick={closeMenu} class="text-black hover:text-pink-600 transition">Blog</A>
+              <A href="/gallery" onClick={closeMenu} class="text-black hover:text-pink-600 transition">Gallery</A>
 
             <div class="flex gap-16 mt-6">
               <button
