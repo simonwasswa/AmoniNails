@@ -28,7 +28,7 @@ export default function AboutUs() {
   };
 
   return (
-    <section class="bg-gray-100  overflow-hidden px-4 md:px-24">
+    <section class="bg-gray-100  overflow-hidden px-4 md:px-18">
 
       <div class="max-w-8xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-15 w-full h-full">
 

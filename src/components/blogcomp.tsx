@@ -26,7 +26,7 @@ export default function BlogS() {
   ];
 
   return (
-    <section class="bg-gray-100 pr-8 py-30 px-6 md:px-16">
+    <section class="bg-gray-100 pr-8 py-30 px-6 md:px-18">
       <div class="max-w-9xl mx-auto flex flex-col gap-14">
         {blogs.map((blog) => (
           <div class="flex flex-col md:flex-row gap-8 items-center border-b pb-10">
