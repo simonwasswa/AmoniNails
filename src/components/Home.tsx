@@ -1,4 +1,4 @@
-import { createSignal } from "solid-js";
+import { createSignal, onMount } from "solid-js";
 import nail2 from "../assets/nail2.jpg";
 
 const strings = {
@@ -14,11 +14,13 @@ const strings = {
 export default function HeroSection() {
   const [animate, setAnimate] = createSignal(false);
 
+  // ✅ Trigger animation ONCE when page loads
+  onMount(() => {
+    setTimeout(() => setAnimate(true), 200); // small delay for smooth entry
+  });
+
   return (
-    <section
-      onMouseEnter={() => setAnimate(true)}
-      class="relative min-h-screen overflow-hidden pt-24 md:pt-32 px-4 md:px-20 lg:px-32 pb-20"
-    >
+    <section class="relative min-h-screen overflow-hidden pt-24 md:pt-32 px-4 md:px-20 lg:px-32 pb-20">
 
       {/* Fixed Background Image */}
       <div
