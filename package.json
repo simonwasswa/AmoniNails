@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@solidjs/router": "^0.15.4",
+    "@supabase/supabase-js": "^2.100.0",
     "@tailwindcss/vite": "^4.2.1",
     "solid-icons": "^1.2.0",
     "solid-js": "^1.9.10",
@@ -22,5 +23,4 @@
     "vite": "^7.3.1",
     "vite-plugin-solid": "^2.11.10"
   }
-
 }
