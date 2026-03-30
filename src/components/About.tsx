@@ -32,14 +32,6 @@ const supabase = createClient<Database>(supabaseUrl, supabaseKey);
 
 type Tab = "manicure" | "pedicure" | "waxing";
 
-// Map each tab to its table name
-const tableMap: Record<Tab, "service_manicure" | "service_pedicure" | "service_waxing"> = {
-  manicure: "service_manicure",
-  pedicure: "service_pedicure",
-  waxing:   "service_waxing"
-};
-
-// Grouped data shape
 type GroupedData = Record<Tab, ServiceRow | null>;
 
 export default function AboutUs() {
@@ -57,7 +49,6 @@ export default function AboutUs() {
     setError(null);
 
     try {
-      // Fetch all 3 tables in parallel
       const [manicureRes, pedicureRes, waxingRes] = await Promise.all([
         supabase.from("service_manicure").select("*").eq("is_active", true).limit(1).single(),
         supabase.from("service_pedicure").select("*").eq("is_active", true).limit(1).single(),
@@ -84,7 +75,6 @@ export default function AboutUs() {
 
   onMount(() => fetchAll());
 
-  // Current tab's data
   const current = () => data()[activeTab()];
 
   const tabs: Tab[] = ["manicure", "pedicure", "waxing"];
@@ -94,7 +84,7 @@ export default function AboutUs() {
       <div class="max-w-8xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-15 w-full h-full">
 
         {/* IMAGE — changes per tab */}
-        <div class="w-[400px] lg:w-4/5 xl:w-full mx-auto h-[700px] overflow-hidden rounded-2xl shadow-2xl border-8 border-white/60">
+        <div class="w-400px lg:w-4/5 xl:w-full mx-auto h-700px overflow-hidden rounded-2xl shadow-2xl border-8 border-white/60">
           <img
             src={current()?.image_url ?? "/fallback.jpg"}
             alt={current()?.title ?? activeTab()}
@@ -155,17 +145,14 @@ export default function AboutUs() {
               >
                 <div class="space-y-4">
 
-                  {/* Title */}
                   <h3 class="text-3xl font-serif font-semibold text-gray-900">
                     {current()!.title}
                   </h3>
 
-                  {/* Description */}
                   <p class="text-gray-600 leading-relaxed">
                     {current()!.description}
                   </p>
 
-                  {/* Features list */}
                   <Show when={(current()!.features ?? []).length > 0}>
                     <p class="font-medium text-gray-800">Here's a list of those:</p>
                     <ul class="space-y-2">
