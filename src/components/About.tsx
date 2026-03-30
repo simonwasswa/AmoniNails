@@ -95,7 +95,7 @@ export default function AboutUs() {
 
         {/* CONTENT */}
         <div class="space-y-8 flex flex-col justify-center">
-          <h2 class="text-4xl md:text-5xl font-serif font-bold text-gray-900">
+          <h2 class="text-4xl mt-12 md:text-5xl font-serif font-bold text-gray-900">
             Do Nails & Waxing!
           </h2>
 
