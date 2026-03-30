@@ -30,7 +30,7 @@ export default function AboutUs() {
       <div class="max-w-8xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-15 w-full h-full">
 
         {/* IMAGE */}
-        <div class="w-[400px] lg:w-4/5 xl:w-2/2 mx-auto h-[700px] lg:h-175 xl:h-200 overflow-hidden rounded-2xl shadow-2xl border-8 border-white/60">
+        <div class="w-400px lg:w-4/5 xl:w-2/2 mx-auto h-700px lg:h-175 xl:h-200 overflow-hidden rounded-2xl shadow-2xl border-8 border-white/60">
           <img
             src={nail2}
             alt="Beauty model with manicure"
