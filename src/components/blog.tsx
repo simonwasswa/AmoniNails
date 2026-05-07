@@ -51,7 +51,7 @@ export default function BlogSection() {
         console.error("Supabase error:", error.message);
         setError(error.message);
       } else {
-        const rows = data ?? [];
+        const rows = (data ?? []) as Blog[];
         setBlogs(rows);
         // ✅ Pull section background directly from the DB row
         if (rows.length > 0 && rows[0].section_bg_url) {
